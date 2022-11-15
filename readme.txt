@@ -1,3 +1,15 @@
+Kodun amacı:
+
+Server process: Tek bir process olarak çalışır. İstemcilerle (client) message passing yöntemi ile veri
+paylaşır. Multithreaded olarak çalışır: main thread ve her bir istemci için birer worker thread. Main
+thread belirli bir maibox ı dinler ve görevi kimliği verilen istemciyi kaydetmek ve onun adına bir worker
+thread oluşturmaktır. İstemci daha sonra tüm haberleşmesini bu worker thread üzerinden yapar.
+Worker thread kendisine gelen bir mesajı kimliği verilen istemciye gönderir.
+
+Client process: Process komut satırından çalıştırılırken argv[1] olarak istemcinin mesajlaşmak için
+kullanacağı kimlik verlilir. İstemci döngü içinde kime mesaj göndereceğini ve mesaj içeriğini (string)
+kullanıcıdan alır ve sunucuya gönderir. Kendine gelen mesajları ise standart çıktıya yazdırır.
+
 Compile etmek için
 	rm  -f server
 	gcc  -Wall  -g server.c  -o server  -pthread
