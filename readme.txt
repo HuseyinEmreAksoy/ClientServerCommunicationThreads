@@ -36,7 +36,7 @@ server da gönderen kişinin message type ı ve mesajı yazar alıcı da ise "Te
 Ctrl + c ile de client ve serverlar sonlandırılır.
 *******************************************************************
 Örnek: NOT!!!("Write text" burada iletilmesini istediğin mesajlar "Text" ise sana gelen mesajlar. "^C" ise  Ctrl + c yi ifade eder.)
-
+ 
 rm  -f server
 gcc  -Wall  -g server.c  -o server  -pthread
 gcc  -Wall  -g client.c  -o client  -pthread
